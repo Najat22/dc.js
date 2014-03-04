@@ -81,7 +81,7 @@ dc.legend = function () {
                 .text(dc.pluck('name'))
                 .attr("x", _itemHeight + LABEL_GAP)
                 .attr("y", function(){
-                    console.error("CH:", this.clientHeight, "SH:", this.scrollHeight, "BB:", this.getBBox().height);
+                    console.error("CH:", this.clientHeight, "SH:", this.scrollHeight, "BB:", this.getBBox().height, "D3:", d3.select(this).style("height"));
                     return _itemHeight / 2 + (this.clientHeight?this.clientHeight:13) / 2 - 2;
                 });
 
