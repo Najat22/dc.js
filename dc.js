@@ -6027,7 +6027,10 @@ dc.legend = function () {
         itemEnter.append("text")
                 .text(dc.pluck('name'))
                 .attr("x", _itemHeight + LABEL_GAP)
-                .attr("y", function(){return _itemHeight / 2 + (this.clientHeight?this.clientHeight:13) / 2 - 2;});
+                .attr("y", function(){
+                    console.error("CH:", this.clientHeight, "SH:", this.scrollHeight, "BB:", this.getBBox().height);
+                    return _itemHeight / 2 + (this.clientHeight?this.clientHeight:13) / 2 - 2;
+                });
 
         var _cumulativeLegendTextWidth = 0;
         var row = 0;
